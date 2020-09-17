@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>EItem.qml</file>
+        <file>EInformation.qml</file>
+        <file>ETip.qml</file>
+        <file>EPanel.qml</file>
+    </qresource>
+</RCC>

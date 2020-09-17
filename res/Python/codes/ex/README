@@ -1,0 +1,6 @@
+Python中调用C函数。
+方法一：
+1)编写C代码。
+2)编译C代码为动态库。
+3)Python中使用ctypes.CDLL加载动态库。
+4)Python中调用C函数。

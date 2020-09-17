@@ -1,0 +1,51 @@
+/* vector */
+
+//>头文件普遍都有的宏保护, 防止多重include
+//>GNU C++ Library, 即libstdc++.so, 而非libc++.so
+//>lib库名不同也就是GNU与标准C++的不同实现的区别
+#ifndef _GLIBCXX_VECTOR
+#define _GLIBCXX_VECTOR 1
+
+//>pragma预处理用法
+//>告诉GCC该位置下面的include为系统头文件
+//>不影响该位置上面的部分
+#pragma GCC system_header
+
+/* 从下面的include可以看出, 有多个不同类型的vector. */
+
+//>算法相关的模板函数
+#include <bits/stl_algobase.h>
+//>用于内存分配的模板类
+//>typedef了许多常见的数据类型
+#include <bits/allocator.h>
+//>非标准的对象创建/销毁的模板函数
+//>如_Construct/_Destroy
+#include <bits/stl_construct.h>
+//>操作原始内存的模板函数
+//>从头文件的名字就可以看出, 函数并不初始化内存
+#include <bits/stl_uninitialized.h>
+//>正宗的vector模版类
+#include <bits/stl_vector.h>
+//>vector模板类的特化版本
+//>用bool特化的vector模板, 即vector<bool>
+#include <bits/stl_bvector.h> 
+//>模板函数, 获取迭代器Iterator的begin/end
+#include <bits/range_access.h>
+
+//>tcc版vector
+#ifndef _GLIBCXX_EXPORT_TEMPLATE
+# include <bits/vector.tcc>
+#endif
+
+//>debug版vector
+#ifdef _GLIBCXX_DEBUG
+# include <debug/vector>
+#endif
+
+//>profile版vector
+#ifdef _GLIBCXX_PROFILE
+# include <profile/vector>
+#endif
+
+#endif /* _GLIBCXX_VECTOR */
+
